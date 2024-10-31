@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Montserrat, Roboto } from "next/font/google";
+import { NextUIProvider } from '@nextui-org/react';
+
 import "./globals.css";
+import 'react-circular-progressbar/dist/styles.css';
 
 // Load Montserrat and Roboto from Google Fonts
 const montserrat = Montserrat({
@@ -29,7 +32,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} ${roboto.variable} antialiased`}>
+        <NextUIProvider>
         {children}
+        </NextUIProvider>
       </body>
     </html>
   );

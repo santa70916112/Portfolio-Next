@@ -8,6 +8,7 @@ import { useClick } from "@/hooks/mouse";
 import User from "@/components/basic/icons/user";
 import { BsArrowRight } from "react-icons/bs";
 import Link from "next/link";
+import useAppStore from "@/store/app";
 
 const Login: React.FC = () => {
   const currentTime = useCurrentTime();
@@ -18,7 +19,7 @@ const Login: React.FC = () => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
 
   const [isHide, setIsHide] = useState<boolean>(false);
-
+  const { setAppUser, setOpenModal } = useAppStore();
   const hideDate = () => {
     gsap.to(contentRef.current, {
       duration: 0.2,
@@ -47,7 +48,9 @@ const Login: React.FC = () => {
   const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && isHide) {
       hideWrapper();
+      setTimeout(() => setOpenModal(true), 500);
     }
+    setAppUser(e.currentTarget.value);
   };
   useKeyPress("Enter", hideDate);
   useClick(hideDate);
@@ -56,11 +59,11 @@ const Login: React.FC = () => {
     <>
       <div
         ref={wrapperRef}
-        className="w-full relative h-screen bg-cover bg-[url('/assets/images/login.jpg')] flex items-center justify-center"
+        className="w-full relative z-50 h-screen bg-cover bg-[url('/assets/images/login.jpg')] flex items-center justify-center"
       >
         <div
           ref={cridentialRef}
-          className="absolute z-30 opacity-0 flex flex-col items-center justify-center w-full max-w-[300px] transform -translate-y-[100px]"
+          className="absolute z-50 opacity-0 flex flex-col items-center justify-center w-full max-w-[300px] transform -translate-y-[100px]"
         >
           <User className="max-w-[200px] mb-10" />
           <div className="flex flex-row w-full items-center">
