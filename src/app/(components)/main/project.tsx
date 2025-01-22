@@ -2,10 +2,13 @@
 import { PROJECT_COMPLETE } from "@/constants/main";
 import Heading from "@/components/basic/heading";
 import { CircularProgressbar } from "react-circular-progressbar";
+import useAppStore from "@/store/app";
 
 const ProjectComplete = () => {
+    const { setOpenProjectDrawer, isOpenProjectDrawer } = useAppStore();
+
     return (
-        <div className="flex flex-col items-center bg-card p-4 rounded-xl cursor-pointer transition-transform duration-500 hover:scale-105">
+        <div onClick={() => setOpenProjectDrawer(!isOpenProjectDrawer)} className="flex flex-col items-center bg-card p-4 rounded-xl cursor-pointer transition-transform duration-500 hover:scale-105">
             <Heading level={6} className="mb-5 font-semibold">
                 {PROJECT_COMPLETE?.title}
             </Heading>

@@ -9,9 +9,16 @@ import ExperienceAndSkills from "./experience";
 import Testimonial from "./testimonial";
 import ContactInfo from "./contact";
 
+import ProjectDrawer from "@/components/custom/drawer/project";
+import useAppStore from "@/store/app";
+
 export default function Main() {
+
+  const { isFinishedOnboarding } = useAppStore();
+  const isOnboarding = isFinishedOnboarding ? '' : 'hidden';
+
   return (
-    <main className="z-10 bg-black min-h-screen min-w-screen gap-4 flex items-center justify-center p-4">
+    <main className={`z-10 bg-black min-h-screen min-w-screen gap-4 flex items-center justify-center p-4 ${isOnboarding}`}>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 max-w-[1024px] md:grid-cols-4">
         <div className="flex flex-col gap-4">
           <ProjectComplete />
@@ -29,6 +36,7 @@ export default function Main() {
           <ContactInfo />
         </div>
       </div>
+      <ProjectDrawer />
     </main>
   );
 }

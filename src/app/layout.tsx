@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Roboto } from "next/font/google";
-import { NextUIProvider } from '@nextui-org/react';
+import { HeroUIProvider } from '@heroui/react';
 
 import "./globals.css";
 import 'react-circular-progressbar/dist/styles.css';
@@ -32,9 +32,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} ${roboto.variable} antialiased`}>
-        <NextUIProvider>
+        <HeroUIProvider>
           {children}
-        </NextUIProvider>
+        </HeroUIProvider>
       </body>
     </html>
   );

@@ -1,4 +1,4 @@
-import { ModalAnime } from "@/constants/anime";
+import { MODAL } from "@/constants/anime";
 import useAppStore from "@/store/app";
 import {
   Modal,
@@ -7,24 +7,30 @@ import {
   ModalBody,
   ModalFooter,
   Button,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { useEffect } from "react";
 import confetti from "canvas-confetti";
 
 export default function WelcomeModal() {
-  const { openModal, setOpenModal, appUser } = useAppStore();
+  const { openModal, setOpenModal, appUser, setFinishedOnboarding } = useAppStore();
 
   useEffect(() => {
     if (openModal) {
       confetti();
     }
   }, [openModal]);
+
+
+  const handleClose = () => {
+    setFinishedOnboarding(true);
+    setOpenModal(false);
+  }
+
   return (
     <Modal
       backdrop="opaque"
       isOpen={openModal}
-      onOpenChange={() => setOpenModal(!openModal)}
-      motionProps={ModalAnime}
+      motionProps={MODAL}
     >
       <ModalContent className="bg-card">
         {(onClose) => (
@@ -34,30 +40,18 @@ export default function WelcomeModal() {
             </ModalHeader>
             <ModalBody className="font-mont bg-card">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                pulvinar risus non risus hendrerit venenatis. Pellentesque sit
-                amet hendrerit risus, sed porttitor quam.
+                Thanks for stopping by! I’m really excited to share my work with you. In this portfolio, you’ll find a collection of my projects that I’ve poured my heart into. Each card represents something special, and I hope you enjoy checking them out!
               </p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                pulvinar risus non risus hendrerit venenatis. Pellentesque sit
-                amet hendrerit risus, sed porttitor quam.
-              </p>
-              <p>
-                Magna exercitation reprehenderit magna aute tempor cupidatat
-                consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex
-                incididunt cillum quis. Velit duis sit officia eiusmod Lorem
-                aliqua enim laboris do dolor eiusmod. Et mollit incididunt nisi
-                consectetur esse laborum eiusmod pariatur proident Lorem eiusmod
-                et. Culpa deserunt nostrud ad veniam.
+                Just click on any card to dive deeper into the project details and see what I’ve been up to. Take your time, explore, and have fun!
               </p>
             </ModalBody>
             <ModalFooter className="bg-card">
-              <Button color="danger" variant="light" onPress={onClose}>
+              <Button onClick={() => handleClose()} className="h-input font-mont" color="danger" variant="light" onPress={onClose}>
                 Close
               </Button>
-              <Button color="primary" onPress={onClose}>
-                Action
+              <Button onClick={() => handleClose()} className="h-input font-mont" color="primary" onPress={onClose}>
+                Play Music
               </Button>
             </ModalFooter>
           </>
