@@ -1,29 +1,32 @@
+// Main.tsx
 "use client";
-import Heading from "@/components/basic/heading";
-import { CircularProgressbar } from "react-circular-progressbar";
+
+import Image from "next/image";
+import TotalFollowers from "./follower";
+import PersonalInfo from "./personal";
+import ProjectComplete from "./project";
+import ExperienceAndSkills from "./experience";
+import Testimonial from "./testimonial";
+import ContactInfo from "./contact";
 
 export default function Main() {
   return (
-    <main className="absolute z-10 top-0 bg-black inset-0 flex items-center justify-center">
-      <div className="flex flex-col items-center bg-[#ffa8b6] p-4 rounded-xl">
-        <Heading level={5} className="mb-5">
-          Project Complete
-        </Heading>
-        <div className="border-4 border-black w-[130px] h-[130px] flex items-center justify-center rounded-full">
-          <CircularProgressbar
-            className="font-mont w-[100px] h-[100px]"
-            value={65}
-            text={`${65}%`}
-            styles={{
-              path: {
-                stroke: "pink",
-              },
-            }}
-          />
+    <main className="z-10 bg-black min-h-screen min-w-screen gap-4 flex items-center justify-center p-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 max-w-[1024px] md:grid-cols-4">
+        <div className="flex flex-col gap-4">
+          <ProjectComplete />
+          <TotalFollowers />
         </div>
-        <div className="flex flex-col items-center pt-5">
-          <Heading level={3}>2.5K</Heading>
-          <span className="font-mont">Completed 2.5K Projects</span>
+        <div className="flex flex-col gap-4 md:col-span-2">
+          <PersonalInfo />
+          <div className="flex flex-col bg-card rounded-xl items-center justify-end relative h-[280px] w-full cursor-pointer md:flex-1">
+            <Image src={'/assets/images/me.png'} alt="tadashi" width={240} height={380} className="absolute bottom-0" />
+          </div>
+          <ExperienceAndSkills />
+        </div>
+        <div className="flex flex-col gap-4">
+          <Testimonial />
+          <ContactInfo />
         </div>
       </div>
     </main>

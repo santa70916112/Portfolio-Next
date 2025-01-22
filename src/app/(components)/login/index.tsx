@@ -34,6 +34,8 @@ const Login: React.FC = () => {
     gsap.to(wrapperRef.current, {
       duration: 0.5,
       opacity: 0,
+      zIndex: 0,
+      display: "none"
     });
   };
 
@@ -70,13 +72,13 @@ const Login: React.FC = () => {
             <input
               type="text"
               placeholder="Username"
-              className="font-mont outline-none h-input pl-3 w-full"
+              className="font-mont text-background outline-none h-input pl-3 w-full"
               autoFocus
               onKeyDown={handleEnter} // Change from onChange to onKeyDown
             />
             <Link
               href={"/main"}
-              className="bg-gray-full h-input flex items-center justify-center w-[35px] cursor-pointer"
+              className="bg-gray h-input flex items-center justify-center w-[35px] cursor-pointer"
             >
               <BsArrowRight />
             </Link>
@@ -87,15 +89,12 @@ const Login: React.FC = () => {
           ref={contentRef}
           className={`flex flex-col relative z-20 px-8 py-20 transition-opacity duration-500 w-full h-screen justify-end`}
         >
-          <h1 className="text-9xl text-white font-mont">{currentTime}</h1>
-          <h1 className="text-white text-5xl font-mont">
-            <span>{date}</span>
-          </h1>
+          <span className="text-9xl text-white font-mont">{currentTime}</span>
+          <span className="text-white text-5xl font-mont">{date}</span>
         </div>
         <div
-          className={`absolute inset-0 z-10 bg-dark-300 transition-all duration-500 ${
-            isHide ? "backdrop-blur" : ""
-          }`}
+          className={`absolute inset-0 z-10 bg-overlay transition-all duration-500 ${isHide ? "backdrop-blur" : ""
+            }`}
         />
       </div>
     </>

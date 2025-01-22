@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${montserrat.variable} ${roboto.variable} antialiased`}>
         <NextUIProvider>
-        {children}
+          {children}
         </NextUIProvider>
       </body>
     </html>

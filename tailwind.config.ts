@@ -13,30 +13,14 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        dark: {
-          100: "var(--dark-100)",
-          200: "var(--dark-200)",
-          300: "var(--dark-300)",
-          400: "var(--dark-400)",
-          500: "var(--dark-500)",
-          600: "var(--dark-600)",
-          700: "var(--dark-700)",
-          800: "var(--dark-800)",
-          900: "var(--dark-900)",
-          full: "var(--dark-full)",
-        },
-        gray : {
-          100: "var(--gray-100)",
-          200: "var(--gray-200)",
-          300: "var(--gray-300)",
-          400: "var(--gray-400)",
-          500: "var(--gray-500)",
-          600: "var(--gray-600)",
-          700: "var(--gray-700)",
-          800: "var(--gray-800)",
-          900: "var(--gray-900)",
-          full: "var(--gray-full)",
-        }
+        overlay : 'var(--overlay)',
+        gray : "var(--gray)",
+        card : "var(--card)",
+        primary : "var(--primary)",
+        secondary : "var(--secondary)",
+        success : "var(--success)",
+        warning : "var(--warning)",
+        danger : "var(--danger)",
       },
     },
     fontFamily:{
@@ -45,6 +29,9 @@ const config: Config = {
     },
     height : {
       input : '35px',
+      screen : '100vh'
+    },
+    minHeight: {
       screen : '100vh'
     }
   },

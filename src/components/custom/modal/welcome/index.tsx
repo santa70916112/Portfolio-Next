@@ -26,13 +26,13 @@ export default function WelcomeModal() {
       onOpenChange={() => setOpenModal(!openModal)}
       motionProps={ModalAnime}
     >
-      <ModalContent>
+      <ModalContent className="bg-card">
         {(onClose) => (
           <>
-            <ModalHeader className="flex flex-col gap-1 font-mont">
+            <ModalHeader className="flex flex-col gap-1 font-mont bg-card">
               👏 Hi {appUser}
             </ModalHeader>
-            <ModalBody>
+            <ModalBody className="font-mont bg-card">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
                 pulvinar risus non risus hendrerit venenatis. Pellentesque sit
@@ -52,7 +52,7 @@ export default function WelcomeModal() {
                 et. Culpa deserunt nostrud ad veniam.
               </p>
             </ModalBody>
-            <ModalFooter>
+            <ModalFooter className="bg-card">
               <Button color="danger" variant="light" onPress={onClose}>
                 Close
               </Button>
