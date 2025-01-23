@@ -1,10 +1,10 @@
 // components/ContactInfo.tsx
 import { H6 } from "@/components/basic/heading";
 import { CONTACT_INFO } from "@/constants/main";
-import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import useAppStore from "@/store/app";
+import Image from "next/image";
 
 const ContactInfo = () => {
     const { isFinishedOnboarding } = useAppStore();
@@ -33,7 +33,7 @@ const ContactInfo = () => {
             opacity: 0,
             stagger: 0.3, // Stagger the animations
             ease: "power3.out",
-            delay:0.5
+            delay: 0.5
         });
     };
 
@@ -45,7 +45,7 @@ const ContactInfo = () => {
                     <div key={contact.alt} ref={(el: any) => (contactRefs.current[index] = el)}>
                         <Image
                             src={contact.src}
-                            className="transition-transform duration-500 hover:!scale-105"
+                            className="transition-transform w-full h-auto aspect-square duration-500 hover:!scale-105"
                             alt={contact.alt}
                             width={150}
                             height={150}

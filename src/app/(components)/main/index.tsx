@@ -26,8 +26,8 @@ export default function Main() {
         </div>
         <div className="flex flex-col gap-4 md:col-span-2">
           <PersonalInfo />
-          <div className="flex flex-col bg-card rounded-xl items-center justify-end relative h-[280px] w-full cursor-pointer md:flex-1">
-            <Image src={'/assets/images/me.png'} alt="tadashi" width={240} height={380} className="absolute bottom-0" />
+          <div className="relative flex flex-col bg-card rounded-xl items-center justify-end relative h-[280px] w-full cursor-pointer md:flex-1">
+            <Image src={'/assets/images/me.png'} alt="tadashi" width={240} height={380} className="absolute bottom-0 z-10" />
           </div>
           <ExperienceAndSkills />
         </div>

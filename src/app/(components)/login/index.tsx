@@ -87,10 +87,10 @@ const Login: React.FC = () => {
 
         <div
           ref={contentRef}
-          className={`flex flex-col relative z-20 px-8 py-20 transition-opacity duration-500 w-full h-screen justify-end`}
+          className={`flex flex-col relative z-20 px-8 py-20 transition-opacity duration-500 w-full h-screen justify-start items-center md:items-start md:justify-end`}
         >
-          <span className="text-9xl text-white font-mont">{currentTime}</span>
-          <span className="text-white text-5xl font-mont">{date}</span>
+          <span className="text-8xl text-white font-mont font-bold md:text-9xl">{currentTime}</span>
+          <span className="text-white text-xl font-mont md:text-5xl">{date}</span>
         </div>
         <div
           className={`absolute inset-0 z-10 bg-overlay transition-all duration-500 ${isHide ? "backdrop-blur" : ""

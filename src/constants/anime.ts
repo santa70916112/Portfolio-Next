@@ -27,7 +27,7 @@ export const DRAWER = {
       duration: 0.3,
     },
     exit: {
-      x: 100,
+      x: -100,
       opacity: 0,
       duration: 0.3,
     },

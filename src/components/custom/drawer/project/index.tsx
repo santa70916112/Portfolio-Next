@@ -1,52 +1,52 @@
 import { DRAWER } from "@/constants/anime";
+import { PROJECTS } from "@/constants/project";
 import useAppStore from "@/store/app";
-import {
-    Drawer,
-    DrawerContent,
-    DrawerHeader,
-    DrawerBody,
-    DrawerFooter,
-    Button,
-} from "@heroui/react";
+import { Drawer, DrawerContent } from "@heroui/react";
+import { useState } from "react";
+import Header from "./header";
+import Footer from "./footer";
+import Body from "./body";
 
 export default function ProjectDrawer() {
     const { setOpenProjectDrawer, isOpenProjectDrawer } = useAppStore();
 
+    const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+
+    const handleNext = () => {
+        if (currentProjectIndex < PROJECTS.length - 1) {
+            setCurrentProjectIndex(currentProjectIndex + 1);
+        }
+    };
+
+    const handlePrev = () => {
+        if (currentProjectIndex > 0) {
+            setCurrentProjectIndex(currentProjectIndex - 1);
+        }
+    };
+
     return (
-        <Drawer classNames={{
-            base: "bg-card"
-        }} isOpen={isOpenProjectDrawer} motionProps={DRAWER} onOpenChange={() => setOpenProjectDrawer(!isOpenProjectDrawer)}>
+        <Drawer
+            placement="left"
+            backdrop="blur"
+            classNames={{
+                base: "bg-card",
+                backdrop: "bg-[rgba(0,0,0,.6)]"
+            }}
+            isOpen={isOpenProjectDrawer}
+            motionProps={DRAWER}
+            onOpenChange={() => setOpenProjectDrawer(!isOpenProjectDrawer)}
+        >
             <DrawerContent>
                 {(onClose) => (
                     <>
-                        <DrawerHeader className="flex flex-col gap-1">Drawer Title</DrawerHeader>
-                        <DrawerBody>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar risus non
-                                risus hendrerit venenatis. Pellentesque sit amet hendrerit risus, sed porttitor
-                                quam.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar risus non
-                                risus hendrerit venenatis. Pellentesque sit amet hendrerit risus, sed porttitor
-                                quam.
-                            </p>
-                            <p>
-                                Magna exercitation reprehenderit magna aute tempor cupidatat consequat elit dolor
-                                adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis. Velit duis sit
-                                officia eiusmod Lorem aliqua enim laboris do dolor eiusmod. Et mollit incididunt
-                                nisi consectetur esse laborum eiusmod pariatur proident Lorem eiusmod et. Culpa
-                                deserunt nostrud ad veniam.
-                            </p>
-                        </DrawerBody>
-                        <DrawerFooter>
-                            <Button color="danger" variant="light" onPress={onClose}>
-                                Close
-                            </Button>
-                            <Button color="primary" onPress={onClose}>
-                                Action
-                            </Button>
-                        </DrawerFooter>
+                        <Header />
+                        <Body currentIndex={currentProjectIndex} />
+                        <Footer
+                            currentIndex={currentProjectIndex}
+                            handleNext={handleNext}
+                            handlePrev={handlePrev}
+                            onClose={onClose}
+                        />
                     </>
                 )}
             </DrawerContent>

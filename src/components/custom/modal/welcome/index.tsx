@@ -31,6 +31,7 @@ export default function WelcomeModal() {
       backdrop="opaque"
       isOpen={openModal}
       motionProps={MODAL}
+      placement="center"
     >
       <ModalContent className="bg-card">
         {(onClose) => (

@@ -35,7 +35,7 @@ const ExperienceAndSkills = () => {
             opacity: 0,
             stagger: 0.3, // Stagger the animations with a delay
             ease: "power3.out",
-            delay:0.5
+            delay: 0.5
         });
 
         gsap.from(skillWrapperRef?.current, {
@@ -51,7 +51,7 @@ const ExperienceAndSkills = () => {
             opacity: 0,
             stagger: 0.3, // Stagger the animations with a delay
             ease: "power3.out",
-            delay:0.5
+            delay: 0.5
         });
     };
 

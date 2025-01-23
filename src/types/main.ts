@@ -38,3 +38,14 @@ export interface ContactInfo {
     src: string;
     alt: string;
 }
+
+export interface ProjectDrawer {
+    onClose : () => void;
+    handlePrev : () => void;
+    currentIndex : number;
+    handleNext : () => void;
+}
+
+export interface ProjectDrawerBody {
+    currentIndex : number;
+}
