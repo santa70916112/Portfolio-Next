@@ -13,7 +13,9 @@ export default function ProjectDrawer() {
     const { setOpenProjectDrawer, isOpenProjectDrawer } = useAppStore();
 
     return (
-        <Drawer isOpen={isOpenProjectDrawer} motionProps={DRAWER} onOpenChange={() => setOpenProjectDrawer(!isOpenProjectDrawer)}>
+        <Drawer classNames={{
+            base: "bg-card"
+        }} isOpen={isOpenProjectDrawer} motionProps={DRAWER} onOpenChange={() => setOpenProjectDrawer(!isOpenProjectDrawer)}>
             <DrawerContent>
                 {(onClose) => (
                     <>
