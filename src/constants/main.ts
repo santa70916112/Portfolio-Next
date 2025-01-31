@@ -5,8 +5,8 @@ import { ContactInfo, Experience, PersonalInfo, ProjectComplete, Skills, Testimo
 export const PROJECT_COMPLETE: ProjectComplete = {
     title: "Project Complete",
     value: 100,
-    completedProjects: "2.5K",
-    description: "Completed 2.5K Projects",
+    completedProjects: "58+",
+    description: "Completed 58+ Projects",
     strokeColor: "#17C964"
 };
 
@@ -19,7 +19,12 @@ export const TOTAL_FOLLOWERS: TotalFollowers = {
 
 export const PERSONAL_INFO: PersonalInfo = {
     fullName: "Tadashi Amano",
-    headline: "Full Stack Developer"
+    headline: [
+        "Full Stack Developer",
+        "Frontend Developer",
+        "Backend Developer",
+        "Web3 Full Stack Developer"
+    ]
 };
 
 export const EXPERIENCE: Experience = {

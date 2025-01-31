@@ -33,3 +33,18 @@ export const DRAWER = {
     },
   },
 }
+
+export const DRAWER_RIGHT = {
+  variants: {
+    enter: {
+      opacity: 1,
+      x: 0,
+      duration: 0.3,
+    },
+    exit: {
+      x: 100,
+      opacity: 0,
+      duration: 0.3,
+    },
+  },
+}

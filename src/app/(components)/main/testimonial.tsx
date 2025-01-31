@@ -7,7 +7,7 @@ import gsap from "gsap";
 import useAppStore from "@/store/app";
 
 const Testimonial = () => {
-    const { isFinishedOnboarding } = useAppStore();
+    const { isFinishedOnboarding, setOpenTestimonialDrawer, isOpenTestimonialDrawer, } = useAppStore();
     const sectionRef = useRef<HTMLDivElement | null>(null);
     const headingRef = useRef<HTMLHeadingElement | null>(null);
     const contentRef = useRef<HTMLDivElement | null>(null);
@@ -42,6 +42,7 @@ const Testimonial = () => {
         <div
             ref={sectionRef}
             className="flex flex-col items-center bg-card p-4 flex-1 rounded-xl cursor-pointer transition-transform duration-500 hover:!scale-105"
+            onClick={() => setOpenTestimonialDrawer(!isOpenTestimonialDrawer)}
         >
             <H6 className="mb-5" ref={headingRef}>
                 {TESTIMONIAL?.title}

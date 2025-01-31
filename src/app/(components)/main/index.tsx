@@ -11,6 +11,7 @@ import ContactInfo from "./contact";
 
 import ProjectDrawer from "@/components/custom/drawer/project";
 import useAppStore from "@/store/app";
+import TestimonialDraw from "@/components/custom/drawer/testimonial";
 
 export default function Main() {
 
@@ -39,6 +40,7 @@ export default function Main() {
       <div className="absolute right-0 bottom-0 w-[650px] h-[650px] opacity-50 bg-[radial-gradient(rgba(120,40,200,.6),rgba(120,40,200,0))] z-0" />
       <div className="absolute left-0 bottom-0 w-[650px] h-[650px] opacity-50 bg-[radial-gradient(rgba(0,111,238,.6),rgba(0,111,238,0))] z-0" />
       <ProjectDrawer />
+      <TestimonialDraw/>
     </main>
   );
 }

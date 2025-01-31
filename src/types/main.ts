@@ -16,7 +16,7 @@ export interface TotalFollowers {
 
 export interface PersonalInfo {
     fullName: string;
-    headline: string;
+    headline: Array<string>;
 }
 
 export interface Experience {
@@ -48,4 +48,11 @@ export interface ProjectDrawer {
 
 export interface ProjectDrawerBody {
     currentIndex : number;
+}
+
+
+// Define a type for the skill
+export interface Skill {
+    src: string;
+    years: string;
 }

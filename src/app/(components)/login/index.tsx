@@ -5,10 +5,10 @@ import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useKeyPress } from "@/hooks/key";
 import { useClick } from "@/hooks/mouse";
-import User from "@/components/basic/icons/user";
 import { BsArrowRight } from "react-icons/bs";
 import Link from "next/link";
 import useAppStore from "@/store/app";
+import { Image } from "@heroui/react";
 
 const Login: React.FC = () => {
   const currentTime = useCurrentTime();
@@ -67,7 +67,8 @@ const Login: React.FC = () => {
           ref={cridentialRef}
           className="absolute z-50 opacity-0 flex flex-col items-center justify-center w-full max-w-[300px] transform -translate-y-[100px]"
         >
-          <User className="max-w-[200px] mb-10" />
+          <Image src="/assets/images/me-avatar.png" className="rounded-full mb-10" width={200} height={200} />
+
           <div className="flex flex-row w-full items-center">
             <input
               type="text"

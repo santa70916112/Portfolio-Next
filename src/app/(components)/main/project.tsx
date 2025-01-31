@@ -8,10 +8,10 @@ import gsap from "gsap";
 
 const ProjectComplete = () => {
     const { setOpenProjectDrawer, isOpenProjectDrawer, isFinishedOnboarding } = useAppStore();
-    const sectionRef = useRef(null);
-    const headingRef = useRef(null);
-    const progressRef = useRef(null);
-    const contentRef = useRef(null);
+    const sectionRef = useRef<HTMLDivElement | null>(null);
+    const headingRef = useRef<HTMLHeadingElement | null>(null);
+    const progressRef = useRef<HTMLDivElement | null>(null);
+    const contentRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
         if (isFinishedOnboarding) {
