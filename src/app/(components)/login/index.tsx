@@ -5,10 +5,10 @@ import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useKeyPress } from "@/hooks/key";
 import { useClick } from "@/hooks/mouse";
-import { BsArrowRight } from "react-icons/bs";
 import Link from "next/link";
 import useAppStore from "@/store/app";
 import { Image } from "@heroui/react";
+import { ArrowRight } from "lucide-react";
 
 const Login: React.FC = () => {
   const currentTime = useCurrentTime();
@@ -81,7 +81,7 @@ const Login: React.FC = () => {
               href={"/main"}
               className="bg-gray h-input flex items-center justify-center w-[35px] cursor-pointer"
             >
-              <BsArrowRight />
+              <ArrowRight />
             </Link>
           </div>
         </div>

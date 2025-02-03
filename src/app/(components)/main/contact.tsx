@@ -44,13 +44,15 @@ const ContactInfo = () => {
             <div className="grid grid-cols-2 gap-2 pt-5">
                 {CONTACT_INFO?.map((contact, index) => (
                     <div key={contact.alt} ref={(el: any) => (contactRefs.current[index] = el)}>
-                        <Image
-                            src={contact.src}
-                            className="transition-transform w-full h-auto aspect-square duration-500 hover:!scale-105"
-                            alt={contact.alt}
-                            width={150}
-                            height={150}
-                        />
+                        <a href={contact.alt === 'google' ? `mailto:${contact.link}` : contact.link} target={contact.alt === 'google' ? '' : '_blank'}>
+                            <Image
+                                src={contact.src}
+                                className="transition-transform w-full h-auto aspect-square duration-500 hover:!scale-105"
+                                alt={contact.alt}
+                                width={150}
+                                height={150}
+                            />
+                        </a>
                     </div>
                 ))}
             </div>

@@ -37,6 +37,7 @@ export interface Testimonial {
 export interface ContactInfo {
     src: string;
     alt: string;
+    link : string;
 }
 
 export interface ProjectDrawer {

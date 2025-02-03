@@ -45,18 +45,22 @@ export const TESTIMONIAL: Testimonial = {
 export const CONTACT_INFO: ContactInfo[] = [
     {
         src: "/assets/images/linkedin.png",
-        alt: "linkedin"
+        alt: "linkedin",
+        link : "https://linkedin.com/in/tadashi-amano"
     },
     {
         src: "/assets/images/telegram.png",
-        alt: "telegram"
+        alt: "telegram",
+        link : "https://t.me/tadashiamano"
     },
     {
         src: "/assets/images/skype.png",
-        alt: "skype"
+        alt: "skype",
+        link : "https://join.skype.com/invite/BPaiOd9dJ5YZ",
     },
     {
         src: "/assets/images/google.png",
-        alt: "google"
+        alt: "google",
+        link : "shinobi.design416@gmail.com"
     }
 ];
