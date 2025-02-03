@@ -44,6 +44,7 @@ const TotalFollowers = () => {
     }, []);
 
     const handleSectionClick = async () => {
+        alert('test');
         const follow = localStorage.getItem('follow');
         if (!!follow) {
             toast.success('You already followed me', {
@@ -115,9 +116,9 @@ const TotalFollowers = () => {
         <div
             ref={sectionRef}
             className="flex flex-col items-center bg-card p-4 rounded-xl cursor-pointer transition-transform duration-500 hover:!scale-105"
-            onClick={handleSectionClick}
-            onMouseEnter={handleMouseEnter} // Trigger pulse animation
-            onMouseLeave={handleMouseLeave} // Stop pulse animation
+            onClick={() => handleSectionClick()}
+            onMouseEnter={() => handleMouseEnter()} // Trigger pulse animation
+            onMouseLeave={() => handleMouseLeave()} // Stop pulse animation
         >
             <H6 className="mb-5" ref={headingRef}>
                 {TOTAL_FOLLOWERS?.title}
