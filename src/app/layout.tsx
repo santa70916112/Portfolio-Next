@@ -46,7 +46,7 @@ export const metadata: Metadata = {
       },
     ],
     title: "Tadashi Amano",
-    description: "Full Stack Developer",
+    description: "🌟 Full Stack Developer with 6 years of experience specializing in JavaScript-based development and Web3 technologies.",
     url:"https://tadashiamano.vercel.app"
   }
 };
