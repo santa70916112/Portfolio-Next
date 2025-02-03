@@ -38,11 +38,29 @@ const Testimonial = () => {
         });
     };
 
+    const handleMouseEnter = () => {
+        gsap.to(imageRef.current, {
+            rotate: -10,
+            duration: 0.6,
+            yoyo: true,
+        });
+    };
+
+    const handleMouseLeave = () => {
+        gsap.killTweensOf(imageRef.current); // Stop the animation on mouse leave
+        gsap.to(imageRef.current, {
+            rotate: 0, // Reset scale
+            duration: 0.6,
+        });
+    };
+
     return (
         <div
             ref={sectionRef}
             className="flex flex-col items-center bg-card p-4 flex-1 rounded-xl cursor-pointer transition-transform duration-500 hover:!scale-105"
             onClick={() => setOpenTestimonialDrawer(!isOpenTestimonialDrawer)}
+            onMouseEnter={handleMouseEnter} // Trigger pulse animation
+            onMouseLeave={handleMouseLeave} // Stop pulse animation
         >
             <H6 className="mb-5" ref={headingRef}>
                 {TESTIMONIAL?.title}

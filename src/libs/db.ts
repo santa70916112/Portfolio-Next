@@ -1,5 +1,6 @@
 import path from "path";
 import sqlite3, { Database } from "sqlite3";
+import { migrate } from "./init";
 
 const dbPath = path.join(process.cwd(), "db.db");
 
@@ -16,6 +17,7 @@ export const db: Database = new sqlite3.Database(
 );
 
 export const apiGet = async (query: string): Promise<any[]> => {
+    await migrate();
     return await new Promise((resolve, reject) => {
         db.all(query, (err: Error | null, rows: any[]) => {
             if (err) {
@@ -28,6 +30,7 @@ export const apiGet = async (query: string): Promise<any[]> => {
 };
 
 export const apiPost = async (query: string, values: any[]): Promise<void> => {
+    await migrate();
     return await new Promise((resolve, reject) => {
         db.run(query, values, function (err: Error | null) {
             if (err) {
