@@ -45,12 +45,12 @@ export default function RootLayout({
         <meta name="description" content="Tadashi Amano Portfolio using Next.js. Full Stack Developer Ready !! " />
         <meta property="og:title" content="Tadashi Portfolio" />
         <meta property="og:description" content="Tadashi Amano Portfolio using Next.js. Full Stack Developer Ready !! " />
-        <meta property="og:image" content="/cover.jpg" />
+        <meta property="og:image" content="https://i.postimg.cc/J0YgDV6Y/1729103170256.jpg" />
         <meta property="og:url" content="https://tadashiamano.vercel.app" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Tadashi Portfolio" />
         <meta name="twitter:description" content="Tadashi Amano Portfolio using Next.js. Full Stack Developer Ready !! " />
-        <meta name="twitter:image" content="/cover.jpg" />
+        <meta name="twitter:image" content="https://i.postimg.cc/J0YgDV6Y/1729103170256.jpg" />
         <link rel="icon" href="/profile.png" />
       </Head>
       <body className={`${montserrat.variable} ${roboto.variable} antialiased`}>
