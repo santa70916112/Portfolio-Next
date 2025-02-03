@@ -6,6 +6,7 @@ export const SKILLS: Skill[] = [
     { src: "/assets/images/css.png", years: 7, label: "CSS" },
     { src: "/assets/images/javascript.png", years: 7, label: "JavaScript" },
     { src: "/assets/images/typescript.png", years: 6, label: "TypeScript" },
+    { src: "/assets/images/php.png", years: 6, label: "PHP" },
     { src: "/assets/images/nextjs.png", years: 5, label: "NextJS" },
     { src: "/assets/images/react.png", years: 5, label: "ReactJS" },
     { src: "/assets/images/nodejs.png", years: 5, label: "NodeJS" },
