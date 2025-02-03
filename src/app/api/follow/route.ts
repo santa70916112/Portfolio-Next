@@ -13,6 +13,7 @@ export async function POST() {
             headers: { "Content-Type": "application/json" },
         });
     } catch (err: any) {
+        console.log(err);
         return new Response(JSON.stringify({ message: 'Error Occurred' }), {
             status: 400,
             headers: { "Content-Type": "application/json" },
@@ -37,6 +38,7 @@ export async function GET() {
             });
         }
     } catch (err: any) {
+        console.log(err);
         return new Response(JSON.stringify({ message: 'Error Occurred' }), {
             status: 400,
             headers: { "Content-Type": "application/json" },

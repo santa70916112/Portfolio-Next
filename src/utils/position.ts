@@ -1,7 +1,7 @@
 
 export function calculatePosition(element: HTMLDivElement) {
 
-    var rect = element.getBoundingClientRect();
+    const rect = element.getBoundingClientRect();
 
     return {
         top: Math.round(rect.top),
