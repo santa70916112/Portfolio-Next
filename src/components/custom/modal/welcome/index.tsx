@@ -41,7 +41,7 @@ export default function WelcomeModal() {
                         </ModalHeader>
                         <ModalBody className="font-mont bg-card">
                             <p>
-                                Thanks for stopping by! I’m really excited to share my work with you. In this portfolio, you’ll find a collection of my projects that I’ve poured my heart into. Each card represents something special, and I hope you enjoy checking them out!
+                                Thanks for stopping by! I’m really excited to share my work with you.
                             </p>
                             <p>
                                 Just click on any card to dive deeper into the project details and see what I’ve been up to. Take your time, explore, and have fun!
