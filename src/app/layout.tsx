@@ -34,15 +34,15 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: 'https://nextjs.org/og.png', // Must be an absolute URL
+        url: 'https://i.postimg.cc/J0YgDV6Y/1729103170256.jpg', // Must be an absolute URL
         width: 800,
         height: 600,
       },
       {
-        url: 'https://nextjs.org/og-alt.png', // Must be an absolute URL
+        url: 'https://i.postimg.cc/J0YgDV6Y/1729103170256.jpg', // Must be an absolute URL
         width: 1800,
         height: 1600,
-        alt: 'My custom alt',
+        alt: 'cover',
       },
     ],
     title: "Tadashi Amano",
