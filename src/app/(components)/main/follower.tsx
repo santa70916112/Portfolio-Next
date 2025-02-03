@@ -13,6 +13,7 @@ const TotalFollowers = () => {
     const imageRef = useRef<HTMLImageElement | null>(null);
     const contentRef = useRef<HTMLDivElement | null>(null);
     const [followersCount, setFollowersCount] = useState<number>(0);
+    const [loading, setLoading] = useState<boolean>(false); // Loading state
 
     useEffect(() => {
         if (isFinishedOnboarding) {
@@ -44,9 +45,10 @@ const TotalFollowers = () => {
     }, []);
 
     const handleSectionClick = async () => {
-        alert('test');
+        if (loading) return; // Prevent new requests if loading
+
         const follow = localStorage.getItem('follow');
-        if (!!follow) {
+        if (follow === '1') {
             toast.success('You already followed me', {
                 style: {
                     backgroundColor: "#18181B",
@@ -54,28 +56,39 @@ const TotalFollowers = () => {
                     fontSize: "16px",
                 }
             });
-            return;
+            return; // Prevent further actions if already followed
         }
+
+        setLoading(true); // Set loading to true
 
         try {
-            const response = await fetch('/api/follow', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+            await toast.promise(updateFollow(), {
+                loading: 'Loading',
+                success: 'Thank you for your following',
+                error: 'Error occurred while following',
             });
-
-            if (response.ok) {
-                toast.success('Thank you for your following');
-                setFollowersCount(prevCount => prevCount + 1);
-                localStorage.setItem('follow', '0');
-            } else {
-                console.error('Failed to increase followers count');
-            }
+            localStorage.setItem('follow', '1'); // Mark as followed
         } catch (error) {
             console.error('Error increasing followers count:', error);
+        } finally {
+            setLoading(false); // Reset loading after request
         }
     };
+
+    const updateFollow = async () => {
+        const response = await fetch('/api/follow', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (response.ok) {
+            setFollowersCount(prevCount => prevCount + 1);
+        } else {
+            console.error('Failed to increase followers count');
+        }
+    }
 
     const animateFollowers = () => {
         gsap.from(sectionRef?.current, {
@@ -113,29 +126,31 @@ const TotalFollowers = () => {
     };
 
     return (
-        <div
-            ref={sectionRef}
-            className="flex flex-col items-center bg-card p-4 rounded-xl cursor-pointer transition-transform duration-500 hover:!scale-105"
-            onClick={() => handleSectionClick()}
-            onMouseEnter={() => handleMouseEnter()} // Trigger pulse animation
-            onMouseLeave={() => handleMouseLeave()} // Stop pulse animation
-        >
-            <H6 className="mb-5" ref={headingRef}>
-                {TOTAL_FOLLOWERS?.title}
-            </H6>
-            <div className="relative flex items-center justify-center">
-                <Image
-                    ref={imageRef}
-                    src={TOTAL_FOLLOWERS?.imageSrc}
-                    alt={TOTAL_FOLLOWERS?.imageAlt}
-                    width={150}
-                    height={150}
-                />
-            </div>
-            <div className="flex flex-col items-center pt-5" ref={contentRef}>
-                <H4>{followersCount}</H4>
-                <span className="font-mont">{followersCount} Users Followed</span>
-            </div>
+        <div ref={sectionRef}>
+            <button
+                className={`flex flex-col w-full items-center bg-card p-4 rounded-xl cursor-pointer transition-transform duration-500 hover:!scale-105`} // Adjust opacity if loading
+                onClick={handleSectionClick}
+                onMouseEnter={handleMouseEnter} // Trigger pulse animation
+                onMouseLeave={handleMouseLeave} // Stop pulse animation
+                disabled={loading}
+            >
+                <H6 className="mb-5" ref={headingRef}>
+                    {TOTAL_FOLLOWERS?.title}
+                </H6>
+                <div className="relative flex items-center justify-center">
+                    <Image
+                        ref={imageRef}
+                        src={TOTAL_FOLLOWERS?.imageSrc}
+                        alt={TOTAL_FOLLOWERS?.imageAlt}
+                        width={150}
+                        height={150}
+                    />
+                </div>
+                <div className="flex flex-col items-center pt-5" ref={contentRef}>
+                    <H4>{followersCount}</H4>
+                    <span className="font-mont">{followersCount} Users Followed</span>
+                </div>
+            </button>
         </div>
     );
 };

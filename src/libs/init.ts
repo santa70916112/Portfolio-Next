@@ -1,36 +1,6 @@
-import { db } from "./db";
+import { createClient } from '@supabase/supabase-js'
 
-export const migrate = async () => {
-    db.serialize(() => {
-        db.run(`CREATE TABLE IF NOT EXISTS follows (id INTEGER PRIMARY KEY AUTOINCREMENT, count INTEGER DEFAULT 0);`,
-            (err) => {
-                if (err) {
-                    console.error("Error creating table:", err);
-                    return; // Exit if there's an error
-                }
-                console.log("Follows table created successfully.");
+// Create a single supabase client for interacting with your database
+const supabase = createClient('https://lxclpclnqwwvggeernfv.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx4Y2xwY2xucXd3dmdnZWVybmZ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg2MDE2NjMsImV4cCI6MjA1NDE3NzY2M30.TFiiQ-gZKcT-WbHoQbu-6rLsdF6gZdfYCtziLDuJNC8')
 
-                // Check if there are any rows in the table
-                db.get(`SELECT COUNT(*) AS count FROM follows;`, (countErr, row: { count: number }) => {
-                    if (countErr) {
-                        console.error("Error fetching row count:", countErr);
-                        return; // Exit if there's an error
-                    }
-
-                    if (row.count === 0) {
-                        // Insert one row if there are no existing rows
-                        db.run(`INSERT INTO follows (count) VALUES (248);`, (insertErr) => {
-                            if (insertErr) {
-                                console.error("Error inserting row:", insertErr);
-                            } else {
-                                console.log("One row inserted successfully.");
-                            }
-                        });
-                    } else {
-                        console.log("Row already exists. No insertion performed.");
-                    }
-                });
-            }
-        );
-    });
-};
+export default supabase;
