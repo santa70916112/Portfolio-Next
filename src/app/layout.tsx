@@ -5,7 +5,6 @@ import { HeroUIProvider } from '@heroui/react';
 import "./globals.css";
 import 'react-circular-progressbar/dist/styles.css';
 import { Toaster } from "react-hot-toast";
-import Head from 'next/head';
 
 // Load Montserrat and Roboto from Google Fonts
 const montserrat = Montserrat({
@@ -25,12 +24,19 @@ export const metadata: Metadata = {
   description:
     "Tadashi Amano Portfolio using Next.js. Full Stack Developer Ready !! ",
   icons: {
-    icon: '/profile.png'
+    icon: '/profile.png',
   },
   creator: 'Tadashi Amano',
   keywords: 'Portfolio, Full Stack, Development, Freelance, Tadashi, Amano, Frontend, Backend, Design, Web3, Crypto',
   abstract: 'Tadashi Amano Portfolio',
   applicationName: 'shinobi',
+  openGraph: {
+    type: "website",
+    images: ['/cover.jpg']
+  },
+  twitter: {
+    images: ['/cover.jpg']
+  }
 };
 
 export default function RootLayout({
@@ -41,18 +47,6 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <Head>
-        <meta name="description" content="Tadashi Amano Portfolio using Next.js. Full Stack Developer Ready !! " />
-        <meta property="og:title" content="Tadashi Portfolio" />
-        <meta property="og:description" content="Tadashi Amano Portfolio using Next.js. Full Stack Developer Ready !! " />
-        <meta property="og:image" content="https://i.postimg.cc/J0YgDV6Y/1729103170256.jpg" />
-        <meta property="og:url" content="https://tadashiamano.vercel.app" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Tadashi Portfolio" />
-        <meta name="twitter:description" content="Tadashi Amano Portfolio using Next.js. Full Stack Developer Ready !! " />
-        <meta name="twitter:image" content="https://i.postimg.cc/J0YgDV6Y/1729103170256.jpg" />
-        <link rel="icon" href="/profile.png" />
-      </Head>
       <body className={`${montserrat.variable} ${roboto.variable} antialiased`}>
         <HeroUIProvider>
           {children}
