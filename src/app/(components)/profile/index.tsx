@@ -1,3 +1,5 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 import { H5 } from "@/components/basic/heading";
 import useAppStore from "@/store/app";
 import { Image } from "@heroui/react";
@@ -13,7 +15,7 @@ export default function DetailProfile() {
     const nameRef = useRef<HTMLHeadingElement>(null);
     const headlineRef = useRef<HTMLDivElement>(null);
     const infoRefs = useRef<(HTMLDivElement | null)[]>([]);
-    let timeline = gsap.timeline();
+    const timeline = gsap.timeline();
 
     useEffect(() => {
         if (profileModal) {

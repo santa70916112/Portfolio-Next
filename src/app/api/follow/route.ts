@@ -1,8 +1,8 @@
-// pages/api/users.ts
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 
 import { apiPost, apiGet } from '@/libs/db'; // Ensure apiGet is defined for fetching data
 
-export async function POST(req: Request) {
+export async function POST() {
     const query = 'UPDATE follows SET count = count + 1 WHERE id = ?'; // Assuming you have a specific follow entry
     const values = [1]; // Replace with the appropriate ID for the follow entry
 
@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     }
 }
 
-export async function GET(req: Request) {
+export async function GET() {
     const query = 'SELECT count FROM follows ORDER BY id ASC LIMIT 1'; // Get the count from the first row
 
     try {

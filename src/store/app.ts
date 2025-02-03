@@ -22,7 +22,7 @@ interface AppState {
 }
 
 // Create the store with type annotations
-const useAppStore = create<AppState>((set, get) => ({
+const useAppStore = create<AppState>((set) => ({
   openModal: false,
   profileModal: false,
   isOpenSkillModal: false,

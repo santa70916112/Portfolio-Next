@@ -1,4 +1,5 @@
-// components/ContactInfo.tsx
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 import { H6 } from "@/components/basic/heading";
 import { CONTACT_INFO } from "@/constants/main";
 import { useEffect, useRef } from "react";

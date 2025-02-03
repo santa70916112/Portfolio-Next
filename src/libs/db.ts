@@ -1,3 +1,6 @@
+
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 import path from "path";
 import sqlite3, { Database } from "sqlite3";
 import { migrate } from "./init";

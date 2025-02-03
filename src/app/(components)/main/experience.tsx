@@ -19,7 +19,7 @@ const experience: Experience = EXPERIENCE;
 const skills: Skills = SKILLS;
 
 const ExperienceAndSkills: React.FC = () => {
-    const { isFinishedOnboarding, setOpenSkillModal, isOpenExperience, setOpenExperience } = useAppStore();
+    const { isFinishedOnboarding, setOpenSkillModal, setOpenExperience } = useAppStore();
     const experienceWrapperRef = useRef<HTMLDivElement | null>(null);
     const experienceRef = useRef<HTMLDivElement | null>(null);
     const experienceHeadingRef = useRef<HTMLHeadingElement | null>(null);
@@ -68,13 +68,13 @@ const ExperienceAndSkills: React.FC = () => {
 
         <div className="flex flex-row gap-4 flex-1 max-h-[170px]">
             <div className="flex flex-1" ref={experienceWrapperRef} onClick={() => setOpenExperience(true)}>
-                <div className="flex flex-col bg-warning p-4 rounded-xl cursor-pointer flex-1 transition-transform duration-500 hover:!scale-105">
+                <a target="_blank" href="./pdf/resume.pdf" className="flex flex-col bg-warning p-4 rounded-xl cursor-pointer flex-1 transition-transform duration-500 hover:!scale-105">
                     <H6 className="mb-2" ref={experienceHeadingRef}>Experience</H6>
                     <div className="flex flex-row w-full items-center justify-center flex-1" ref={experienceRef}>
                         <H1>{experience.years}</H1>
                         <H5>{experience.label}</H5>
                     </div>
-                </div>
+                </a>
             </div>
             <div className="flex flex-1 relative">
                 <div ref={skillWrapperRef} className="flex flex-1" onClick={() => setOpenSkillModal(true)}>
