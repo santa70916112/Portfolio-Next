@@ -9,7 +9,7 @@ export default function Body({ currentIndex }: ProjectDrawerBody) {
 
     return (
         <DrawerBody className="font-mont">
-            <div className="relative flex w-full justify-center items-center pt-4">
+            <a href={currentProject.link} target="_blank" className="relative flex w-full justify-center items-center pt-4">
                 <Image
                     isBlurred
                     isZoomed
@@ -18,7 +18,7 @@ export default function Body({ currentIndex }: ProjectDrawerBody) {
                     height={300}
                     src={currentProject.image}
                 />
-            </div>
+            </a>
             <div className="flex flex-col gap-2 py-4">
                 <div className="flex justify-between items-center w-full">
                     <div>
