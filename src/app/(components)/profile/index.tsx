@@ -1,11 +1,19 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 
 import { H5 } from "@/components/basic/heading";
+import { PROFILE_DATA } from "@/constants/profile";
 import useAppStore from "@/store/app";
 import { Image } from "@heroui/react";
 import gsap from "gsap";
-import { Calendar, Clock, Figma, Github, MapPin, X } from "lucide-react";
+import { ExternalLink, X } from "lucide-react";
 import { useEffect, useRef } from "react";
+
+const ANIMATION_DURATION = 1;
+const STAGGER_DELAY = 0.1;
+const INITIAL_OPACITY = 0;
+const FINAL_OPACITY = 1;
+const INITIAL_Y = 20;
+const FINAL_Y = 0;
 
 export default function DetailProfile() {
     const { profileModal, setOpenProfileModal } = useAppStore();
@@ -26,63 +34,57 @@ export default function DetailProfile() {
     const animateScreen = () => {
         timeline.to(leftScreenRef.current, {
             width: "50vw",
-            duration: 1,
+            duration: ANIMATION_DURATION,
             ease: "power3.out",
         }, 0);
 
         timeline.to(rightScreenRef.current, {
             width: "50vw",
-            duration: 1,
+            duration: ANIMATION_DURATION,
             ease: "power3.out",
         }, 0);
 
         timeline.fromTo(imageRef.current, {
             display: "none",
-            opacity: 0,
-            y: 30
+            opacity: INITIAL_OPACITY,
+            y: INITIAL_Y
         }, {
             display: "block",
-            opacity: 1,
-            y: 0,
-            duration: 1,
+            opacity: FINAL_OPACITY,
+            y: FINAL_Y,
+            duration: ANIMATION_DURATION,
         });
 
-        timeline.fromTo(nameRef.current,
-            {
-                opacity: 0,
-                y: 20,
-            },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.5,
-            }, "-=0.5");
+        timeline.fromTo(nameRef.current, {
+            opacity: INITIAL_OPACITY,
+            y: INITIAL_Y,
+        }, {
+            opacity: FINAL_OPACITY,
+            y: FINAL_Y,
+            duration: 0.5,
+        }, "-=0.5");
 
-        timeline.fromTo(headlineRef.current,
-            {
-                opacity: 0,
-                y: 20,
-            },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.5,
-                delay: 0.1, // Slight delay for the headline
-            }, "-=0.5");
+        timeline.fromTo(headlineRef.current, {
+            opacity: INITIAL_OPACITY,
+            y: INITIAL_Y,
+        }, {
+            opacity: FINAL_OPACITY,
+            y: FINAL_Y,
+            duration: 0.5,
+            delay: STAGGER_DELAY, // Slight delay for the headline
+        }, "-=0.5");
 
         infoRefs.current.forEach((ref, index) => {
             if (ref) {
-                timeline.fromTo(ref,
-                    {
-                        opacity: 0,
-                        y: 20,
-                    },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        duration: 0.5,
-                        delay: index * 0.1 // Stagger the animations
-                    }, "-=0.5");
+                timeline.fromTo(ref, {
+                    opacity: INITIAL_OPACITY,
+                    y: INITIAL_Y,
+                }, {
+                    opacity: FINAL_OPACITY,
+                    y: FINAL_Y,
+                    duration: 0.5,
+                    delay: index * STAGGER_DELAY // Stagger the animations
+                }, "-=0.5");
             }
         });
     };
@@ -97,34 +99,29 @@ export default function DetailProfile() {
         <div className={`fixed min-h-screen flex flex-col items-center justify-center w-screen z-50 ${profileModal ? '' : 'hidden'}`}>
             <div className="relative font-mont z-10 flex flex-col items-center w-full max-w-[300px]">
                 <div ref={imageRef} className="mb-10">
-                    <Image src="/assets/images/me-avatar.png" className="rounded-full" width={250} height={250} />
+                    <Image src={PROFILE_DATA.avatarSrc} className="rounded-full" width={250} height={250} />
                 </div>
-                <H5 ref={nameRef}>Tadashi Amano</H5>
+                <H5 ref={nameRef}>{PROFILE_DATA.name}</H5>
                 <div ref={headlineRef} className="font-mont text-gray flex gap-2 mb-5">
-                    <span>Root System |</span>
-                    <span>Perazam |</span>
-                    <span>Levenue</span>
+                    {PROFILE_DATA.headline.map((text, index) => (
+                        <span key={index}>{text}{index < PROFILE_DATA.headline.length - 1 ? ' |' : ''}</span>
+                    ))}
                 </div>
-                <div ref={(el: any) => infoRefs.current[0] = el} className="flex justify-between items-center w-full mb-3">
-                    <MapPin />
-                    <span>New York, US</span>
-                </div>
-                <div ref={(el: any) => infoRefs.current[1] = el} className="flex justify-between items-center w-full mb-3">
-                    <Calendar />
-                    <span>16th, April, 1994</span>
-                </div>
-                <div ref={(el: any) => infoRefs.current[2] = el} className="flex justify-between items-center w-full mb-3">
-                    <Clock />
-                    <span>EST time zone</span>
-                </div>
-                <div ref={(el: any) => infoRefs.current[3] = el} className="flex justify-between items-center w-full mb-3">
-                    <Github />
-                    <span>shinobi8894</span>
-                </div>
-                <div ref={(el: any) => infoRefs.current[4] = el} className="flex justify-between items-center w-full">
-                    <Figma />
-                    <span>shinobi8894</span>
-                </div>
+                {PROFILE_DATA.info.map((item, index) => (
+                    <div key={index} ref={(el: any) => infoRefs.current[index] = el} className="flex justify-between items-center w-full mb-3">
+                        {item.icon}
+                        <div className="flex items-center gap-2">
+                            {item.value}
+                            {
+                                item.link ?
+                                    <a href={item.link} target="_blank">
+                                        <ExternalLink className="text-[#686870] cursor-pointer" />
+                                    </a>
+                                    : null
+                            }
+                        </div>
+                    </div>
+                ))}
             </div>
             <div className="absolute top-10 right-10 cursor-pointer text-white z-10" onClick={() => closeScreen()}>
                 <X />

@@ -55,5 +55,21 @@ export interface ProjectDrawerBody {
 // Define a type for the skill
 export interface Skill {
     src: string;
-    years: string;
+    years: number;
+    label: string;
+}
+
+export interface InfoItem {
+    label: string;
+    value: string;
+    icon: JSX.Element; // Use JSX.Element for React components
+    link? : string;
+}
+
+// Define the type for the profile data
+export interface ProfileData {
+    name: string;
+    headline: string[];
+    avatarSrc: string;
+    info: InfoItem[];
 }

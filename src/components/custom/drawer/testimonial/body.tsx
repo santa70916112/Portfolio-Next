@@ -1,9 +1,10 @@
 import { TESTIMONIAL_DETAIL } from "@/constants/testimonial";
 import { ProjectDrawerBody } from "@/types/main";
 import { DrawerBody, Image } from "@heroui/react";
+import { ExternalLink } from "lucide-react";
 
 export default function Body({ currentIndex }: ProjectDrawerBody) {
-    
+
     const currentProject = TESTIMONIAL_DETAIL[currentIndex];
 
     // Create an array of 5 elements for the stars
@@ -13,12 +14,17 @@ export default function Body({ currentIndex }: ProjectDrawerBody) {
         <DrawerBody className="font-mont">
             <div className="flex flex-col gap-2 py-4">
                 <div className="mt-4 flex flex-col gap-3">
-                    <div className="flex gap-3 items-center">
-                        <Image src={currentProject?.client?.profile} width={50} height={50} alt="profile" />
-                        <div className="flex flex-col gap-0.5">
-                            <p className="text-medium text-foreground font-medium">{currentProject?.client?.name}</p>
-                            <p className="text-small text-default-500">{currentProject?.client?.role}</p>
+                    <div className="flex w-full justify-between items-center">
+                        <div className="flex gap-3 items-center">
+                            <Image src={currentProject?.client?.profile} width={50} height={50} alt="profile" />
+                            <div className="flex flex-col gap-0.5">
+                                <p className="text-medium text-foreground font-medium">{currentProject?.client?.name}</p>
+                                <p className="text-small text-default-500">{currentProject?.client?.role}</p>
+                            </div>
                         </div>
+                        <a href="https://www.linkedin.com/in/tadashi-amano/details/recommendations/" target="_blank">
+                            <ExternalLink className="cursor-pointer text-[#686870]" />
+                        </a>
                     </div>
 
                     <div className="flex flex-col mt-4 gap-3 items-start mb-5">

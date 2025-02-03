@@ -1,16 +1,6 @@
 export const TESTIMONIAL_DETAIL = [
     {
         client: {
-            profile: "/assets/images/wender.jpg",
-            name: "Wender Roberto",
-            role: "Founder of Farmineland"
-        },
-        detail: [
-            "I’ve hired Tadashi as a full-stack developer, and I can’t overstate how impressed I am with his talent. He not only solves complex backend issues and handles Web3 contract integrations with remarkable speed, but also maintains a level of professionalism that’s rare these days. His rates are fair, and he doesn’t take advantage of unexpected challenges to increase the price, something many developers do. What impresses me the most is that Tadashi is doing the work of three people on his own, and delivering exceptional quality. He’s definitely a great asset to our project.",
-        ],
-    },
-    {
-        client: {
             profile: "/assets/images/abbie.jpg",
             name: "Abbie",
             role: "CEO of Perazam"
@@ -27,6 +17,16 @@ export const TESTIMONIAL_DETAIL = [
         },
         detail: [
             "Tadashi helped us produce a next.js/tailwindCSS app backed by Strapi CMS for a healthcare collective with an extensive front-end design. He produced fantastic code and was responsive. The customer was extremely happy, and he delivered on time. I would be glad to recommend him to anyone looking for a strong full-stack engineer to help them deliver their project. Well done, Tadashi!!",
+        ],
+    },
+    {
+        client: {
+            profile: "/assets/images/wender.jpg",
+            name: "Wender Roberto",
+            role: "Founder of Farmineland"
+        },
+        detail: [
+            "I’ve hired Tadashi as a full-stack developer, and I can’t overstate how impressed I am with his talent. He not only solves complex backend issues and handles Web3 contract integrations with remarkable speed, but also maintains a level of professionalism that’s rare these days. His rates are fair, and he doesn’t take advantage of unexpected challenges to increase the price, something many developers do. What impresses me the most is that Tadashi is doing the work of three people on his own, and delivering exceptional quality. He’s definitely a great asset to our project.",
         ],
     },
 ];
