@@ -6,11 +6,13 @@ interface AppState {
   openModal: boolean;
   profileModal: boolean;
   isOpenSkillModal: boolean;
+  isOpenExperience: boolean;
   isOpenProjectDrawer: boolean;
   isOpenTestimonialDrawer: boolean;
   isFinishedOnboarding: boolean;
   appUser: string;
   setOpenModal: (openModal: boolean) => void;
+  setOpenExperience: (openModal: boolean) => void;
   setOpenSkillModal: (openModal: boolean) => void;
   setOpenProfileModal: (openModal: boolean) => void;
   setOpenProjectDrawer: (openDrawer: boolean) => void;
@@ -24,11 +26,13 @@ const useAppStore = create<AppState>((set, get) => ({
   openModal: false,
   profileModal: false,
   isOpenSkillModal: false,
+  isOpenExperience: false,
   isOpenProjectDrawer: false,
   isOpenTestimonialDrawer: false,
   isFinishedOnboarding: false,
   appUser: "Guest",
   setOpenModal: (openModal) => set({ openModal }),
+  setOpenExperience: (isOpenExperience) => set({ isOpenExperience }),
   setOpenSkillModal: (isOpenSkillModal) => set({ isOpenSkillModal }),
   setOpenProfileModal: (profileModal) => set({ profileModal }),
   setOpenProjectDrawer: (isOpenProjectDrawer) => set({ isOpenProjectDrawer }),

@@ -7,6 +7,7 @@ import DetailProfile from "./(components)/profile";
 import SkillModal from "@/components/custom/modal/skill";
 
 const Home: React.FC = () => {
+
   return (
     <div className="relative min-h-screen">
       <DetailProfile />
