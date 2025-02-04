@@ -4,7 +4,6 @@ import { HeroUIProvider } from '@heroui/react';
 
 import "./globals.css";
 import 'react-circular-progressbar/dist/styles.css';
-import { Toaster } from "react-hot-toast";
 
 // Load Montserrat and Roboto from Google Fonts
 const montserrat = Montserrat({
@@ -62,7 +61,6 @@ export default function RootLayout({
       <body className={`${montserrat.variable} ${roboto.variable} antialiased`}>
         <HeroUIProvider>
           {children}
-          <Toaster position="top-right" containerClassName="font-mont" />
         </HeroUIProvider>
       </body>
     </html>
