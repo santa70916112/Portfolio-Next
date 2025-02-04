@@ -52,8 +52,16 @@ const Login: React.FC = () => {
       hideWrapper();
       setTimeout(() => setOpenModal(true), 500);
     }
+  };
+
+  const changeAppUserValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAppUser(e.currentTarget.value);
   };
+
+  const handleClick = () => {
+    hideWrapper();
+    setTimeout(() => setOpenModal(true), 500);
+  }
   useKeyPress("Enter", hideDate);
   useClick(hideDate);
 
@@ -76,13 +84,14 @@ const Login: React.FC = () => {
               className="font-mont text-background outline-none h-input pl-3 w-full"
               autoFocus
               onKeyDown={handleEnter} // Change from onChange to onKeyDown
+              onChange={(e) => changeAppUserValue(e)}
             />
-            <Link
-              href={"/main"}
+            <div
               className="bg-gray h-input flex items-center justify-center w-[35px] cursor-pointer"
+              onClick={handleClick}
             >
               <ArrowRight />
-            </Link>
+            </div>
           </div>
         </div>
 
