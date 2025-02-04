@@ -5,7 +5,6 @@ import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useKeyPress } from "@/hooks/key";
 import { useClick } from "@/hooks/mouse";
-import Link from "next/link";
 import useAppStore from "@/store/app";
 import { Image } from "@heroui/react";
 import { ArrowRight } from "lucide-react";
