@@ -44,9 +44,9 @@ export const TESTIMONIAL: Testimonial = {
 
 export const CONTACT_INFO: ContactInfo[] = [
     {
-        src: "/assets/images/linkedin.png",
-        alt: "linkedin",
-        link : "https://linkedin.com/in/tadashi-amano"
+        src: "/assets/images/discord.png",
+        alt: "discord",
+        link : "https://discord.gg/jncnupVe8a"
     },
     {
         src: "/assets/images/telegram.png",

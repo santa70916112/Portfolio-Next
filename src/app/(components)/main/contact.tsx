@@ -47,7 +47,7 @@ const ContactInfo = () => {
                         <a href={contact.alt === 'google' ? `mailto:${contact.link}` : contact.link} target={contact.alt === 'google' ? '' : '_blank'}>
                             <Image
                                 src={contact.src}
-                                className="transition-transform w-full h-auto aspect-square duration-500 hover:!scale-105"
+                                className="transition-transform w-full h-auto aspect-square rounded-xl duration-500 hover:!scale-105"
                                 alt={contact.alt}
                                 width={150}
                                 height={150}
