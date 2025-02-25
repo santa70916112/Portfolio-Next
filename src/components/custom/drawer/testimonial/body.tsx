@@ -22,9 +22,6 @@ export default function Body({ currentIndex }: ProjectDrawerBody) {
                                 <p className="text-small text-default-500">{currentProject?.client?.role}</p>
                             </div>
                         </div>
-                        <a href="https://www.linkedin.com/in/tadashi-amano/details/recommendations/" target="_blank">
-                            <ExternalLink className="cursor-pointer text-[#686870]" />
-                        </a>
                     </div>
 
                     <div className="flex flex-col mt-4 gap-3 items-start mb-5">
