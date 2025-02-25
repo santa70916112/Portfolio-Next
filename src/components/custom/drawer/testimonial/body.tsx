@@ -1,7 +1,6 @@
 import { TESTIMONIAL_DETAIL } from "@/constants/testimonial";
 import { ProjectDrawerBody } from "@/types/main";
 import { DrawerBody, Image } from "@heroui/react";
-import { ExternalLink } from "lucide-react";
 
 export default function Body({ currentIndex }: ProjectDrawerBody) {
 
