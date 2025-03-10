@@ -2,33 +2,42 @@
 
 import supabase from "@/libs/init";
 
-export async function POST() {
-    // Fetch the current count first
-    const { data: currentData, error: fetchError } = await supabase
+export async function POST(request: Request) {
+    // Get the client's IP address from headers
+    const ip = request.headers.get('x-forwarded-for') || request.headers.get('remote-addr');
+    console.log('ip', ip);
+
+    // Check if the IP has already followed
+    const { data: ipCheck, error: ipError } = await supabase
         .from('follows')
-        .select('count')
-        .eq('id', 1) // Adjust the ID as needed
+        .select('ip_address')
+        .eq('ip_address', ip)
         .single();
 
-    if (fetchError) {
-        console.error(fetchError);
-        return new Response(JSON.stringify({ message: 'Error Occurred while fetching count' }), {
+    if (ipError) {
+        console.error(ipError);
+        return new Response(JSON.stringify({ message: 'Error occurred while checking IP' }), {
             status: 400,
             headers: { "Content-Type": "application/json" },
         });
     }
 
-    const newCount = (currentData?.count || 0) + 1; // Increment the count
+    // If the IP already exists, do not insert
+    if (ipCheck) {
+        return new Response(JSON.stringify({ message: 'This IP has already followed.' }), {
+            status: 400,
+            headers: { "Content-Type": "application/json" },
+        });
+    }
 
-    // Update the count in the database
-    const { error } = await supabase
+    // Store the IP address to prevent double following
+    const { error: insertError } = await supabase
         .from('follows')
-        .update({ count: newCount })
-        .match({ id: 1 }); // Replace with the appropriate ID for the follow entry
+        .insert({ ip_address: ip });
 
-    if (error) {
-        console.error(error);
-        return new Response(JSON.stringify({ message: 'Error Occurred' }), {
+    if (insertError) {
+        console.error(insertError);
+        return new Response(JSON.stringify({ message: 'Error occurred while recording IP' }), {
             status: 400,
             headers: { "Content-Type": "application/json" },
         });
@@ -40,31 +49,22 @@ export async function POST() {
     });
 }
 
-
 export async function GET() {
-    const { data, error } = await supabase
+    // Count distinct IP addresses that have followed
+    const { count, error } = await supabase
         .from('follows')
-        .select('count')
-        .order('id', { ascending: true })
-        .limit(1)
-        .single(); // Get the count from the first row
-
+        .select('ip_address', { count: 'exact', head: true })
+    console.log('count', count);
     if (error) {
         console.error('error', error);
-        return new Response(JSON.stringify({ message: 'Error Occurred' }), {
+        return new Response(JSON.stringify({ message: 'Error occurred' }), {
             status: 400,
             headers: { "Content-Type": "application/json" },
         });
     }
-    if (data) {
-        return new Response(JSON.stringify({ count: data.count }), {
-            status: 200,
-            headers: { "Content-Type": "application/json" },
-        });
-    } else {
-        return new Response(JSON.stringify({ message: 'No entry found.' }), {
-            status: 404,
-            headers: { "Content-Type": "application/json" },
-        });
-    }
+
+    return new Response(JSON.stringify({ totalUniqueFollowers: count }), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+    });
 }

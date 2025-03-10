@@ -32,7 +32,7 @@ const TotalFollowers = () => {
                 });
                 if (response.ok) {
                     const data = await response.json();
-                    setFollowersCount(data.count);
+                    setFollowersCount(data.totalUniqueFollowers);
                 } else {
                     console.error('Failed to fetch followers count');
                 }
@@ -46,18 +46,6 @@ const TotalFollowers = () => {
 
     const handleSectionClick = async () => {
         if (loading) return; // Prevent new requests if loading
-
-        const follow = localStorage.getItem('follow');
-        if (follow === '1') {
-            toast.success('You already followed me', {
-                style: {
-                    backgroundColor: "#18181B",
-                    color: "white",
-                    fontSize: "16px",
-                }
-            });
-            return; // Prevent further actions if already followed
-        }
 
         setLoading(true); // Set loading to true
 
