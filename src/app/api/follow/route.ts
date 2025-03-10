@@ -5,17 +5,16 @@ import supabase from "@/libs/init";
 export async function POST(request: Request) {
     // Get the client's IP address from headers
     const ip = request.headers.get('x-forwarded-for') || request.headers.get('remote-addr');
-    console.log('ip', ip);
 
     // Check if the IP has already followed
     const { data: ipCheck, error: ipError } = await supabase
         .from('follows')
         .select('ip_address')
         .eq('ip_address', ip)
-        .single();
 
+    console.log('data', ipCheck);
     if (ipError) {
-        console.error(ipError);
+        console.error('ip', ipError);
         return new Response(JSON.stringify({ message: 'Error occurred while checking IP' }), {
             status: 400,
             headers: { "Content-Type": "application/json" },
@@ -23,7 +22,7 @@ export async function POST(request: Request) {
     }
 
     // If the IP already exists, do not insert
-    if (ipCheck) {
+    if (ipCheck.length > 0 && ipCheck) {
         return new Response(JSON.stringify({ message: 'This IP has already followed.' }), {
             status: 400,
             headers: { "Content-Type": "application/json" },
