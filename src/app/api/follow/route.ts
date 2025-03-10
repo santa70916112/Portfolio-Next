@@ -23,6 +23,8 @@ export async function POST(request: Request) {
 
     // If the IP already exists, do not insert
     if (ipCheck.length > 0 && ipCheck) {
+        console.error('check');
+
         return new Response(JSON.stringify({ message: 'This IP has already followed.' }), {
             status: 400,
             headers: { "Content-Type": "application/json" },

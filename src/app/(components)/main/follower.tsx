@@ -45,38 +45,65 @@ const TotalFollowers = () => {
     }, []);
 
     const handleSectionClick = async () => {
-        if (loading) return; // Prevent new requests if loading
+        if (loading) return;
 
-        setLoading(true); // Set loading to true
+        setLoading(true);
 
         try {
-            await toast.promise(updateFollow(), {
-                loading: 'Loading',
-                success: 'Thank you for your following',
-                error: 'Error occurred while following',
-            });
-            localStorage.setItem('follow', '1'); // Mark as followed
+            await toast.promise(
+                updateFollow().then((message) => { // Add success message handling
+                    if (message) return message;
+                    return 'Success';
+                }),
+                {
+                    loading: 'Processing follow request...',
+                    success: (message) => message, // Use returned message
+                    error: (err) => err.message || 'Follow failed' // Use error message
+                },
+                {
+                    style: {
+                        backgroundColor: "#18181B",
+                        color: "white",
+                        fontSize: "16px",
+                    }
+                }
+            );
+
         } catch (error) {
             console.error('Error increasing followers count:', error);
         } finally {
-            setLoading(false); // Reset loading after request
+            setLoading(false);
         }
     };
 
     const updateFollow = async () => {
-        const response = await fetch('/api/follow', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
+        try {
+            const response = await fetch('/api/follow', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
 
-        if (response.ok) {
-            setFollowersCount(prevCount => prevCount + 1);
-        } else {
-            console.error('Failed to increase followers count');
+            const data = await response.json(); // Always parse response first
+
+            if (!response.ok) {
+                // Throw error with server message
+                throw new Error(data.message || 'Failed to follow');
+            }
+
+            setFollowersCount(prev => prev + 1);
+            return data.message || 'Thank you for following!'; // Return success message
+        } catch (error) {
+            // Handle network errors and API errors
+            const message = error instanceof Error
+                ? error.message
+                : 'Connection failed';
+            throw new Error(message); // Throw error for toast
         }
-    }
+    };
+
+
 
     const animateFollowers = () => {
         gsap.from(sectionRef?.current, {
