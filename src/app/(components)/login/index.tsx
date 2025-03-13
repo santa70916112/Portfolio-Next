@@ -79,7 +79,7 @@ const Login: React.FC = () => {
           <div className="flex flex-row w-full items-center">
             <input
               type="text"
-              placeholder="Username"
+              placeholder="What's your name ?"
               className="font-mont text-background outline-none h-input pl-3 w-full"
               autoFocus
               onKeyDown={handleEnter} // Change from onChange to onKeyDown
