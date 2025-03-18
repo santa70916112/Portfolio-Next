@@ -44,9 +44,9 @@ export const TESTIMONIAL: Testimonial = {
 
 export const CONTACT_INFO: ContactInfo[] = [
     {
-        src: "/assets/images/discord.png",
-        alt: "discord",
-        link : "https://discord.gg/jncnupVe8a"
+        src: "/assets/images/signal.png",
+        alt: "signal",
+        link : "https://signal.me/#eu/Xh1cGS-GbRKz24ZPSGdXOp784PbH1UGQgHPHS32w8cRSKd_eZM1Nk5lfXE0j75s3"
     },
     {
         src: "/assets/images/telegram.png",
@@ -54,9 +54,9 @@ export const CONTACT_INFO: ContactInfo[] = [
         link : "https://t.me/tadashiamano"
     },
     {
-        src: "/assets/images/skype.png",
-        alt: "skype",
-        link : "https://join.skype.com/invite/BPaiOd9dJ5YZ",
+        src: "/assets/images/whatsapp.png",
+        alt: "whatsapp",
+        link : "https://wa.me/13142961821",
     },
     {
         src: "/assets/images/google.png",
