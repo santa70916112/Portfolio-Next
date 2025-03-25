@@ -44,14 +44,14 @@ export const TESTIMONIAL: Testimonial = {
 
 export const CONTACT_INFO: ContactInfo[] = [
     {
-        src: "/assets/images/signal.png",
-        alt: "signal",
-        link : "https://signal.me/#eu/Xh1cGS-GbRKz24ZPSGdXOp784PbH1UGQgHPHS32w8cRSKd_eZM1Nk5lfXE0j75s3"
+        src: "/assets/images/reddit.png",
+        alt: "reddit",
+        link : "https://www.reddit.com/user/fgalons/"
     },
     {
         src: "/assets/images/telegram.png",
         alt: "telegram",
-        link : "https://t.me/tadashiamano"
+        link : "https://t.me/tadashiama8894"
     },
     {
         src: "/assets/images/whatsapp.png",
