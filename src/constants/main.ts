@@ -44,9 +44,9 @@ export const TESTIMONIAL: Testimonial = {
 
 export const CONTACT_INFO: ContactInfo[] = [
     {
-        src: "/assets/images/reddit.png",
-        alt: "reddit",
-        link : "https://www.reddit.com/user/fgalons/"
+        src: "/assets/images/teams.svg",
+        alt: "teams",
+        link : "https://teams.live.com/l/invite/FEABC4xOKcvkSk82wE"
     },
     {
         src: "/assets/images/telegram.png",

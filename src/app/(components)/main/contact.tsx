@@ -43,7 +43,7 @@ const ContactInfo = () => {
             <H6 className="mb-5">Contact Info</H6>
             <div className="grid grid-cols-2 gap-2 pt-5">
                 {CONTACT_INFO?.map((contact, index) => (
-                    <div key={contact.alt} ref={(el: any) => (contactRefs.current[index] = el)}>
+                    <div className="bg-secondary rounded-3xl" key={contact.alt} ref={(el: any) => (contactRefs.current[index] = el)}>
                         <a href={contact.alt === 'google' ? `mailto:${contact.link}` : contact.link} target={contact.alt === 'google' ? '' : '_blank'}>
                             <Image
                                 src={contact.src}
