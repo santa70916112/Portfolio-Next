@@ -100,7 +100,7 @@ const Login: React.FC = () => {
         >
           <span className="text-8xl text-white font-mont font-bold md:text-9xl">{currentTime}</span>
           <span className="text-white text-xl font-mont mb-4 md:text-5xl">{date}</span>
-          <span className="text-white text-xs font-mont md:text-base">Please click mouse or type Enter to browse portfolio</span>
+          <span className="text-white text-xs font-mont md:text-base">Please click mouse or press Enter to browse portfolio</span>
         </div>
         <div
           className={`absolute inset-0 z-10 bg-overlay transition-all duration-500 ${isHide ? "backdrop-blur" : ""
