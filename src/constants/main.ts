@@ -51,7 +51,7 @@ export const CONTACT_INFO: ContactInfo[] = [
     {
         src: "/assets/images/telegram.png",
         alt: "telegram",
-        link : "https://t.me/tadashiama8894"
+        link : "http://t.me/tadashiamano0416"
     },
     {
         src: "/assets/images/whatsapp.png",
