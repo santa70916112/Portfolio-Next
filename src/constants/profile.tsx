@@ -27,7 +27,7 @@ export const PROFILE_DATA: ProfileData = {
             label: "GitHub",
             value: "shinobi8894",
             icon: <Github />,
-            link : 'https://github.com/@shinobi8894'
+            link : 'https://github.com/shinobi8894'
         },
         {
             label: "Figma",
