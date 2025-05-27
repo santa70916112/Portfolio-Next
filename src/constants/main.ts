@@ -47,17 +47,17 @@ export const CONTACT_INFO: ContactInfo[] = [
     {
         src: "/assets/images/discord.jpg",
         alt: "Discord",
-        link : "https://teams.live.com/l/invite/FEABC4xOKcvkSk82wE"
+        link : "https://discord.com/channels/@bohdan_kolya_99067"
     },
     {
         src: "/assets/images/telegram.png",
         alt: "Telegram",
-        link : "http://t.me/tadashiamano0416"
+        link : "https://t.me/dev_expert123"
     },
     {
         src: "/assets/images/whatsapp.png",
         alt: "Whatsapp",
-        link : "https://wa.me/13142961821",
+        link : "https://wa.me/38095315274",
     },
     {
         src: "/assets/images/google.png",
