@@ -73,6 +73,155 @@ export const PROJECTS = [
         image: "/assets/images/cerashealth.png",
         link : "https://cerashealth.com"
     },
-    
+    {
+        title: "Ceras Health",
+        description: "Health Group website for their business",
+        client: {
+            profile: "/assets/images/app-1-1.png",
+            name: "Udaya Devineni",
+            role: "CEO of CerasHealth"
+        },
+        detail: [
+            "I was working as a Freelancer and I got offer from Project Manager of the CerasHealth as a Frontend Developer.",
+            "Worked on the Frontend to make SVG animation and responsive pages"
+        ],
+        image: "/assets/images/app-1.png",
+        link : "https://apps.apple.com/in/app/petvesta/id6499036298"
+    },
+    {
+        title: "Ceras Health",
+        description: "Health Group website for their business",
+        client: {
+            profile: "/assets/images/app-2-1.jpeg",
+            name: "Udaya Devineni",
+            role: "CEO of CerasHealth"
+        },
+        detail: [
+            "I was working as a Freelancer and I got offer from Project Manager of the CerasHealth as a Frontend Developer.",
+            "Worked on the Frontend to make SVG animation and responsive pages"
+        ],
+        image: "/assets/images/app-2.png",
+        link : "https://play.google.com/store/apps/details?id=com.exeeria&hl=en_IN&gl=US"
+    },
+    {
+        title: "Ceras Health",
+        description: "Health Group website for their business",
+        client: {
+            profile: "/assets/images/CMS-dash-1.png",
+            name: "Udaya Devineni",
+            role: "CEO of CerasHealth"
+        },
+        detail: [
+            "I was working as a Freelancer and I got offer from Project Manager of the CerasHealth as a Frontend Developer.",
+            "Worked on the Frontend to make SVG animation and responsive pages"
+        ],
+        image: "/assets/images/CMS-dash.png",
+        link : "https://dashboards.techpyro.com/"
+    },
+    {
+        title: "Ceras Health",
+        description: "Health Group website for their business",
+        client: {
+            profile: "/assets/images/crypto-1-1.png",
+            name: "Udaya Devineni",
+            role: "CEO of CerasHealth"
+        },
+        detail: [
+            "I was working as a Freelancer and I got offer from Project Manager of the CerasHealth as a Frontend Developer.",
+            "Worked on the Frontend to make SVG animation and responsive pages"
+        ],
+        image: "/assets/images/crypto-1.png",
+        link : "https://nftstars.shop/"
+    },
+    {
+        title: "Ceras Health",
+        description: "Health Group website for their business",
+        client: {
+            profile: "/assets/images/E-commerce-1-1.png",
+            name: "Udaya Devineni",
+            role: "CEO of CerasHealth"
+        },
+        detail: [
+            "I was working as a Freelancer and I got offer from Project Manager of the CerasHealth as a Frontend Developer.",
+            "Worked on the Frontend to make SVG animation and responsive pages"
+        ],
+        image: "/assets/images/E-commerce-1.png",
+        link : "https://products.techpyro.com/"
+    },
+    {
+        title: "Ceras Health",
+        description: "Health Group website for their business",
+        client: {
+            profile: "/assets/images/edu-1-1.jpg",
+            name: "Udaya Devineni",
+            role: "CEO of CerasHealth"
+        },
+        detail: [
+            "I was working as a Freelancer and I got offer from Project Manager of the CerasHealth as a Frontend Developer.",
+            "Worked on the Frontend to make SVG animation and responsive pages"
+        ],
+        image: "/assets/images/edu-1.png",
+        link : "https://navkarbrilliantclasses.com/"
+    },
+    {
+        title: "Ceras Health",
+        description: "Health Group website for their business",
+        client: {
+            profile: "/assets/images/wp-1-1.jpg",
+            name: "Udaya Devineni",
+            role: "CEO of CerasHealth"
+        },
+        detail: [
+            "I was working as a Freelancer and I got offer from Project Manager of the CerasHealth as a Frontend Developer.",
+            "Worked on the Frontend to make SVG animation and responsive pages"
+        ],
+        image: "/assets/images/wp-1.png",
+        link : "https://avequipment.com.au/"
+    },
+    {
+        title: "Ceras Health",
+        description: "Health Group website for their business",
+        client: {
+            profile: "/assets/images/wp-2-1.jpg",
+            name: "Udaya Devineni",
+            role: "CEO of CerasHealth"
+        },
+        detail: [
+            "I was working as a Freelancer and I got offer from Project Manager of the CerasHealth as a Frontend Developer.",
+            "Worked on the Frontend to make SVG animation and responsive pages"
+        ],
+        image: "/assets/images/wp-2.png",
+        link : "https://bolsador.com/"
+    },
+    {
+        title: "Ceras Health",
+        description: "Health Group website for their business",
+        client: {
+            profile: "/assets/images/wp-3-1.jpg",
+            name: "Udaya Devineni",
+            role: "CEO of CerasHealth"
+        },
+        detail: [
+            "I was working as a Freelancer and I got offer from Project Manager of the CerasHealth as a Frontend Developer.",
+            "Worked on the Frontend to make SVG animation and responsive pages"
+        ],
+        image: "/assets/images/wp-3.png",
+        link : "https://nov8.tech/"
+    },
+    {
+        title: "Ceras Health",
+        description: "Health Group website for their business",
+        client: {
+            profile: "/assets/images/wp-4-1.jpg",
+            name: "Udaya Devineni",
+            role: "CEO of CerasHealth"
+        },
+        detail: [
+            "I was working as a Freelancer and I got offer from Project Manager of the CerasHealth as a Frontend Developer.",
+            "Worked on the Frontend to make SVG animation and responsive pages"
+        ],
+        image: "/assets/images/wp-4.png",
+        link : "https://thesbashop.com/"
+    },
     // Add more projects as needed
 ];

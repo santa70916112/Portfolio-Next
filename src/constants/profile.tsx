@@ -4,18 +4,18 @@ import { Calendar, Clock, Figma, Github, MapPin } from "lucide-react";
 
 // Create the constant with the defined type
 export const PROFILE_DATA: ProfileData = {
-    name: "Tadashi Amano",
+    name: "Bohdan Andriy",
     headline: ["Root System", "Perazam", "Levenue"],
     avatarSrc: "/assets/images/me-avatar.png",
     info: [
         {
             label: "Location",
-            value: "New York, US",
+            value: "Bohdan Andriy, Ukraine",
             icon: <MapPin />,
         },
         {
             label: "Birth Date",
-            value: "16th, April, 1994",
+            value: "29th, January, 1996",
             icon: <Calendar />,
         },
         {
@@ -25,15 +25,15 @@ export const PROFILE_DATA: ProfileData = {
         },
         {
             label: "GitHub",
-            value: "shinobi8894",
+            value: "santa70916112",
             icon: <Github />,
-            link : 'https://github.com/shinobi8894'
+            link : 'https://github.com/santa70916112'
         },
         {
             label: "Figma",
-            value: "shinobi8894",
+            value: "santa70916112",
             icon: <Figma />,
-            link : 'https://figma.com/@shinobi8894'
+            link : 'https://figma.com/@santa70916112'
         },
     ],
 };

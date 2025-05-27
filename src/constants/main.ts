@@ -5,25 +5,26 @@ import { ContactInfo, Experience, PersonalInfo, ProjectComplete, Skills, Testimo
 export const PROJECT_COMPLETE: ProjectComplete = {
     title: "Project Complete",
     value: 100,
-    completedProjects: "58+",
-    description: "Completed 58+ Projects",
+    completedProjects: "100+",
+    description: "Completed 100+ Projects",
     strokeColor: "#17C964"
 };
 
 export const TOTAL_FOLLOWERS: TotalFollowers = {
     title: "Total Followers",
-    followers: "2.5K",
+    followers: "10K+",
     imageSrc: "/assets/images/hearts.png",
     imageAlt: "hearts"
 };
 
 export const PERSONAL_INFO: PersonalInfo = {
-    fullName: "Tadashi Amano",
+    fullName: "Bohdan Andriy",
     headline: [
         "Full Stack Developer",
-        "Frontend Developer",
-        "Backend Developer",
-        "Web3 Full Stack Developer"
+        "Wordpress Developer",
+        "Shopify Developer",
+        "React/ReactNative Developer",
+        "PHP/Python Developer",
     ]
 };
 
@@ -44,23 +45,23 @@ export const TESTIMONIAL: Testimonial = {
 
 export const CONTACT_INFO: ContactInfo[] = [
     {
-        src: "/assets/images/teams.svg",
-        alt: "teams",
+        src: "/assets/images/discord.jpg",
+        alt: "Discord",
         link : "https://teams.live.com/l/invite/FEABC4xOKcvkSk82wE"
     },
     {
         src: "/assets/images/telegram.png",
-        alt: "telegram",
+        alt: "Telegram",
         link : "http://t.me/tadashiamano0416"
     },
     {
         src: "/assets/images/whatsapp.png",
-        alt: "whatsapp",
+        alt: "Whatsapp",
         link : "https://wa.me/13142961821",
     },
     {
         src: "/assets/images/google.png",
-        alt: "google",
+        alt: "Google",
         link : "shinobi.design416@gmail.com"
     }
 ];
