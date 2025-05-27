@@ -15,7 +15,7 @@ export const PROFILE_DATA: ProfileData = {
         },
         {
             label: "Birth Date",
-            value: "29th, January, 1996",
+            value: "3th, January, 1996",
             icon: <Calendar />,
         },
         {
