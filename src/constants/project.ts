@@ -78,7 +78,7 @@ export const PROJECTS = [
         description: "Health Group website for their business",
         client: {
             profile: "/assets/images/app-1-1.png",
-            name: "Udaya Devineni",
+            name: "Dmytro Mazur",
             role: "CEO of CerasHealth"
         },
         detail: [
@@ -108,7 +108,7 @@ export const PROJECTS = [
         description: "Health Group website for their business",
         client: {
             profile: "/assets/images/CMS-dash-1.png",
-            name: "Udaya Devineni",
+            name: "Bohdan Kotob",
             role: "CEO of CerasHealth"
         },
         detail: [
@@ -123,7 +123,7 @@ export const PROJECTS = [
         description: "Health Group website for their business",
         client: {
             profile: "/assets/images/crypto-1-1.png",
-            name: "Udaya Devineni",
+            name: "Ihor ulchak",
             role: "CEO of CerasHealth"
         },
         detail: [
@@ -138,7 +138,7 @@ export const PROJECTS = [
         description: "Health Group website for their business",
         client: {
             profile: "/assets/images/E-commerce-1-1.png",
-            name: "Udaya Devineni",
+            name: "Jamil Mohr",
             role: "CEO of CerasHealth"
         },
         detail: [
@@ -153,7 +153,7 @@ export const PROJECTS = [
         description: "Health Group website for their business",
         client: {
             profile: "/assets/images/edu-1-1.jpg",
-            name: "Udaya Devineni",
+            name: "Ethan Roberts",
             role: "CEO of CerasHealth"
         },
         detail: [
@@ -168,7 +168,7 @@ export const PROJECTS = [
         description: "Health Group website for their business",
         client: {
             profile: "/assets/images/wp-1-1.jpg",
-            name: "Udaya Devineni",
+            name: "Rusty Kshlerin",
             role: "CEO of CerasHealth"
         },
         detail: [
@@ -183,7 +183,7 @@ export const PROJECTS = [
         description: "Health Group website for their business",
         client: {
             profile: "/assets/images/wp-2-1.jpg",
-            name: "Udaya Devineni",
+            name: "Brandon Erdman",
             role: "CEO of CerasHealth"
         },
         detail: [
@@ -198,7 +198,7 @@ export const PROJECTS = [
         description: "Health Group website for their business",
         client: {
             profile: "/assets/images/wp-3-1.jpg",
-            name: "Udaya Devineni",
+            name: "Isac Funk",
             role: "CEO of CerasHealth"
         },
         detail: [
@@ -213,7 +213,7 @@ export const PROJECTS = [
         description: "Health Group website for their business",
         client: {
             profile: "/assets/images/wp-4-1.jpg",
-            name: "Udaya Devineni",
+            name: "Serhii Polishchuk",
             role: "CEO of CerasHealth"
         },
         detail: [
