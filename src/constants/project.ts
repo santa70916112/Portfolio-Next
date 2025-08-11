@@ -12,7 +12,7 @@ export const PROJECTS = [
             "Also need to update backend for the additional Lancoin feature and build Smart Contract, integrate with Backend."
         ],
         image: "/assets/images/farmineland.png",
-        link : "https://farmine.land"
+        link: "https://farmine.land"
     },
     {
         title: "Lerahealth",
@@ -27,7 +27,7 @@ export const PROJECTS = [
             "I build the frontend using Next.js + TypeScript + Tailwind CSS + Gsap and setup Strapi CMS for the content management. Collaborate with Jeff for the Woocommerce Setup"
         ],
         image: "/assets/images/lerahealth.png",
-        link : "https://lerahealth.com"
+        link: "https://lerahealth.com"
     },
     {
         title: "Perazam",
@@ -42,7 +42,7 @@ export const PROJECTS = [
             "I joined to the Perazam as a team member after collaboration"
         ],
         image: "/assets/images/perazam.png",
-        link : "https://perazam.com"
+        link: "https://perazam.com"
     },
     {
         title: "SportsBlog",
@@ -56,7 +56,7 @@ export const PROJECTS = [
             "Jon was working on the project however with urgent requirements, Jon asked me to work on the project together. Project was using React + Django + PostgreSQL and I worked on the Frontend and integrate with Backend API",
         ],
         image: "/assets/images/sportsblog.png",
-        link : "https://sportsblog.com"
+        link: "https://sportsblog.com"
     },
     {
         title: "Ceras Health",
@@ -71,22 +71,23 @@ export const PROJECTS = [
             "Worked on the Frontend to make SVG animation and responsive pages"
         ],
         image: "/assets/images/cerashealth.png",
-        link : "https://cerashealth.com"
+        link: "https://cerashealth.com"
     },
     {
-        title: "Ceras Health",
-        description: "Health Group website for their business",
+        title: "PetVesta",
+        description: "Premium pet products and services platform for pet owners",
         client: {
             profile: "/assets/images/app-1-1.png",
-            name: "Dmytro Mazur",
-            role: "CEO of CerasHealth"
+            name: "Better Point Pavilion Portal LLC",
+            role: "App Developer and Provider"
         },
         detail: [
-            "I was working as a Freelancer and I got offer from Project Manager of the CerasHealth as a Frontend Developer.",
-            "Worked on the Frontend to make SVG animation and responsive pages"
+            "Developed and maintained the PetVesta iOS app, offering a seamless shopping experience for premium pet products.",
+            "Implemented features to book grooming, walks, and unique pet experiences, enhancing user convenience.",
+            "Focused on performance improvements and bug fixes in the latest version to optimize user experience."
         ],
         image: "/assets/images/app-1.png",
-        link : "https://apps.apple.com/in/app/petvesta/id6499036298"
+        link: "https://apps.apple.com/in/app/petvesta/id6499036298"
     },
     {
         title: "Ceras Health",
@@ -101,7 +102,7 @@ export const PROJECTS = [
             "Worked on the Frontend to make SVG animation and responsive pages"
         ],
         image: "/assets/images/app-2.png",
-        link : "https://play.google.com/store/apps/details?id=com.exeeria&hl=en_IN&gl=US"
+        link: "https://play.google.com/store/apps/details?id=com.exeeria&hl=en_IN&gl=US"
     },
     {
         title: "Ceras Health",
@@ -116,7 +117,7 @@ export const PROJECTS = [
             "Worked on the Frontend to make SVG animation and responsive pages"
         ],
         image: "/assets/images/CMS-dash.png",
-        link : "https://dashboards.techpyro.com/"
+        link: "https://dashboards.techpyro.com/"
     },
     {
         title: "Ceras Health",
@@ -131,7 +132,7 @@ export const PROJECTS = [
             "Worked on the Frontend to make SVG animation and responsive pages"
         ],
         image: "/assets/images/crypto-1.png",
-        link : "https://nftstars.shop/"
+        link: "https://nftstars.shop/"
     },
     {
         title: "Ceras Health",
@@ -146,7 +147,7 @@ export const PROJECTS = [
             "Worked on the Frontend to make SVG animation and responsive pages"
         ],
         image: "/assets/images/E-commerce-1.png",
-        link : "https://products.techpyro.com/"
+        link: "https://products.techpyro.com/"
     },
     {
         title: "Ceras Health",
@@ -161,7 +162,7 @@ export const PROJECTS = [
             "Worked on the Frontend to make SVG animation and responsive pages"
         ],
         image: "/assets/images/edu-1.png",
-        link : "https://navkarbrilliantclasses.com/"
+        link: "https://navkarbrilliantclasses.com/"
     },
     {
         title: "Ceras Health",
@@ -176,7 +177,7 @@ export const PROJECTS = [
             "Worked on the Frontend to make SVG animation and responsive pages"
         ],
         image: "/assets/images/wp-1.png",
-        link : "https://avequipment.com.au/"
+        link: "https://avequipment.com.au/"
     },
     {
         title: "Ceras Health",
@@ -191,7 +192,7 @@ export const PROJECTS = [
             "Worked on the Frontend to make SVG animation and responsive pages"
         ],
         image: "/assets/images/wp-2.png",
-        link : "https://bolsador.com/"
+        link: "https://bolsador.com/"
     },
     {
         title: "Ceras Health",
@@ -206,7 +207,7 @@ export const PROJECTS = [
             "Worked on the Frontend to make SVG animation and responsive pages"
         ],
         image: "/assets/images/wp-3.png",
-        link : "https://nov8.tech/"
+        link: "https://nov8.tech/"
     },
     {
         title: "Ceras Health",
@@ -221,7 +222,7 @@ export const PROJECTS = [
             "Worked on the Frontend to make SVG animation and responsive pages"
         ],
         image: "/assets/images/wp-4.png",
-        link : "https://thesbashop.com/"
+        link: "https://thesbashop.com/"
     },
     // Add more projects as needed
 ];
