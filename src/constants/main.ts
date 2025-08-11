@@ -18,7 +18,7 @@ export const TOTAL_FOLLOWERS: TotalFollowers = {
 };
 
 export const PERSONAL_INFO: PersonalInfo = {
-    fullName: "Bohdan Andriy",
+    fullName: "Ihor Ulchuck",
     headline: [
         "Full Stack Developer",
         "Wordpress Developer",
@@ -47,17 +47,17 @@ export const CONTACT_INFO: ContactInfo[] = [
     {
         src: "/assets/images/discord.jpg",
         alt: "Discord",
-        link : "https://discord.com/channels/@bohdan_kolya_99067"
+        link : "#"
     },
     {
         src: "/assets/images/telegram.png",
         alt: "Telegram",
-        link : "https://t.me/dev_expert123"
+        link : "#"
     },
     {
         src: "/assets/images/whatsapp.png",
         alt: "Whatsapp",
-        link : "https://wa.me/38095315274",
+        link : "#",
     },
     {
         src: "/assets/images/google.png",
